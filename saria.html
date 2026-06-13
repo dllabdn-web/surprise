@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>🎁 Gift For You</title>
+</head>
+
+<body style="
+background:pink;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+font-family:Arial;
+margin:0;
+">
+
+<div style="text-align:center;">
+
+<h1>Hi kifk cava? 😂</h1>
+
+<p id="msg">اضغطي الزر إذا عندك فضول 👀</p>
+
+<button id="btn" onclick="showMessage()" style="
+padding:12px 20px;
+font-size:18px;
+cursor:pointer;
+">
+اضغطي هون
+</button>
+
+</div>
+
+<script>
+
+let count = 0;
+let escapes = 0;
+
+function showMessage() {
+
+count++;
+
+if(count == 1){
+
+document.getElementById("msg").innerHTML =
+"🤔 اضغطي هون مرة تانية";
+
+}
+
+else if(count == 2){
+
+document.getElementById("msg").innerHTML =
+"😏 أوكي... اضغطي هون كمان مرة";
+
+}
+
+else if(count == 3){
+
+document.getElementById("msg").innerHTML =
+"😈 خلص هيدي آخر مرة";
+
+let btn = document.getElementById("btn");
+
+btn.onclick = function(){
+
+if(escapes < 3){
+
+escapes++;
+
+btn.style.position = "fixed";
+
+btn.style.left =
+Math.random() * (window.innerWidth - 150) + "px";
+
+btn.style.top =
+Math.random() * (window.innerHeight - 100) + "px";
+
+}
+
+else{
+
+document.getElementById("msg").innerHTML =
+"🎉 مبروك!<br><br>ربحتي معنا جائزة أكتر بنت سودة 😂<br><br>😎 لاستلام الجائزة تفضلي اليوم على سهرة<br><br>❤️ وبحبك يا سودة بس ما تقولي لحدا 😂";
+
+btn.style.display = "none";
+
+}
+
+};
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
